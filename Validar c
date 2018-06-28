@@ -1,0 +1,75 @@
+char letras[5];
+    int i;
+    for(i=0;i<5;i++)
+    {
+        printf("Ingrese letra a cargar\n");
+        scanf(" %c",&letras[i]);
+
+        while(isalpha(letras[i])==0)
+        {
+            printf("Ingrese letra !!!\n");
+            scanf(" %c",&letras[i]);
+        }
+    }
+    ***********************
+    int main()
+{
+    char letras[5];
+    int i;
+    for(i=0;i<5;i++)
+    {
+        printf("Ingrese letra a cargar\n");
+        scanf(" %c",&letras[i]);
+
+        while(letras[i]>48 && letras[i]<57)
+        {
+            printf("Ingrese letra !!!\n");
+            scanf(" %c",&letras[i]);
+        }
+    }
+
+    return 0;
+}
+
+******************************************************************
+
+int validarPalabra(char []);
+int main()
+{
+    char nombre[10]="12";
+
+    while(validarPalabra(nombre)!=0)
+    {
+        printf("Ingrese solo letras!! ");
+        gets(nombre);
+    }
+
+
+
+    return 0;
+}
+int validarPalabra(char palabra[])
+{
+    int retorno=0;
+    int cant;
+    int i;
+    cant=strlen(palabra);
+    if(palabra==NULL || cant<1)
+    {
+        
+       retorno=-1;
+    }else
+    {
+        for(i=0;i<cant;i++)
+        {
+            if(isdigit(palabra[i])!=0)
+            {
+                retorno=-2;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
+***********************
